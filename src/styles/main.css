@@ -62,16 +62,31 @@ ul, ol {
 }
 
 .logo {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.75rem;
-  letter-spacing: 0.05em;
+  display: inline-flex;    
+  justify-content: center;
+  line-height: 0;          
+  text-decoration: none;
+  padding: 0;              
   color: var(--color-primary);
   transition: color var(--transition-fast);
+  
 }
 
 .logo:hover {
   color: var(--color-accent);
+}
+
+.logo svg {
+  height: 50px;            
+  width: auto;             
+  display: block;         
+  fill: currentColor;     
+  transition: transform var(--transition-fast);
+  overflow: visible;
+}
+
+.logo:hover svg {
+  transform: scale(1.05); 
 }
 
 .main-nav {
