@@ -1,0 +1,31 @@
+:root {
+  /* Paleta de Colores */
+  --color-primary: #7d5d3b;
+  --color-accent: #a67c52;
+  --color-bg: #fdfbf7;
+  --color-contrast: #392503;
+  --color-white: #ffffff;
+  --color-shadow: rgba(57, 37, 3, 0.15);
+
+  /* Tipografía */
+  --font-display: 'Montserrat', sans-serif;
+  --font-accent: 'Livvic', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+
+  /* Espaciado */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+
+  /* Breakpoints */
+  --bp-mobile: 480px;
+  --bp-tablet: 768px;
+  --bp-desktop: 1024px;
+
+  /* Transiciones */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
