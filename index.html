@@ -5,11 +5,36 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CARIFER - Calzado Artesanal de Lujo</title>
-    <link rel="stylesheet" href="/src/styles/design-tokens.css" />
     <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <header class="main-header">
+      <a href="/" class="logo">
+        <span>CARIFER</span>
+      </a>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="content">
+      <!-- Secciones inyectadas aquí -->
+    </main>
+
+    <footer class="main-footer">
+      <div class="footer-content">
+        <p>&copy; 2024 CARIFER - Calzado Artesanal de Lujo</p>
+        <a href="https://facebook.com" class="social-link" target="_blank" rel="noopener">
+          Facebook
+        </a>
+      </div>
+    </footer>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
