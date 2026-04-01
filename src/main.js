@@ -20,4 +20,23 @@ if (navToggle && mainNav) {
 const content = document.getElementById('content');
 if (content) {
   content.appendChild(CategoryCarousel());
+
+  const track = document.querySelector('.carousel-track');
+  const dotsContainer = document.querySelector('.carousel-dots');
+  
+  if (track && dotsContainer) {
+    const updateDots = () => {
+      const scrollPos = track.scrollLeft;
+      const cardWidth = track.querySelector('.carousel-card')?.offsetWidth || 280;
+      const activeIndex = Math.round(scrollPos / cardWidth);
+      
+      const dots = dotsContainer.querySelectorAll('.dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === activeIndex);
+      });
+    };
+
+    track.addEventListener('scroll', updateDots);
+    updateDots();
+  }
 }
