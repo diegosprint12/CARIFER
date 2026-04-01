@@ -73,8 +73,15 @@
 - **Fonts**: Descarga manual (Montserrat, Livvic, Open Sans)
 
 ## 6. Checklist de Entrega
-- [ ] Header con logo funcional
-- [ ] Navegación responsive (Menú móvil)
+- [x] Header con logo funcional
+- [x] Navegación responsive (Menú móvil)
 - [ ] Carrusel sin bugs de scroll
-- [ ] Efectos Hover en botones y redes sociales
+- [x] Efectos Hover en botones y redes sociales
 - [ ] Optimización de assets
+
+## 7. Progreso Implementado
+- [x] Sticky header con backdrop-blur
+- [x] Logo SVG con hover currentColor
+- [x] Menú Hamburguesa toggle (mobile)
+- [x] Navbar con Montserrat y letter-spacing
+- [x] Responsive بـ breakpoint 768px

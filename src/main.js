@@ -1,5 +1,8 @@
 import './styles/tokens.css';
 import './styles/main.css';
+import './styles/carousel.css';
+
+import { CategoryCarousel } from './components/CategoryCarousel.js';
 
 console.log('CARIFER - Inicializando aplicación...');
 
@@ -12,4 +15,9 @@ if (navToggle && mainNav) {
     navToggle.setAttribute('aria-expanded', !expanded);
     mainNav.classList.toggle('active');
   });
+}
+
+const content = document.getElementById('content');
+if (content) {
+  content.appendChild(CategoryCarousel());
 }
