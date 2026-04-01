@@ -100,13 +100,14 @@ ul, ol {
 }
 
 .nav-list a {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 400;
   color: var(--color-contrast);
   position: relative;
-  padding: var(--space-xs) 0;
+  padding: var(--space-xs) var(--space-sm);
   transition: color var(--transition-fast);
+  letter-spacing: 0.03em;
 }
 
 .nav-list a::after {
@@ -178,12 +179,8 @@ ul, ol {
     font-size: 1.5rem;
   }
 
-  .nav-list {
-    gap: var(--space-md);
-  }
-
-  .nav-list a {
-    font-size: 0.875rem;
+  .main-nav {
+    display: none;
   }
 
   .footer-content {
