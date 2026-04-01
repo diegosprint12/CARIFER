@@ -36,20 +36,10 @@ export function CategoryCarousel() {
             <h3 class="card-title">${cat.name}</h3>
           </article>
         `).join('')}
-        <a href="#productos" class="cta-card-mobile">
-          <div class="cta-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M4 4h16v16H4z" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M9 9h6v6H9z" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M4 12h16" stroke-linecap="round"/>
-              <path d="M12 4v16" stroke-linecap="round"/>
-            </svg>
-            <h3 class="cta-title">Explora el Catálogo</h3>
-            <span class="mobile-cta-btn">Ver más</span>
-          </div>
-        </a>
       </div>
     </div>
+    
+    <!-- Desktop CTA -->
     <div class="carousel-cta">
       <a href="#productos" class="carousel-cta-btn">
         Explorar Catálogo
@@ -58,12 +48,20 @@ export function CategoryCarousel() {
         </svg>
       </a>
     </div>
+
     <div class="carousel-dots" aria-hidden="true">
       <span class="dot active"></span>
       <span class="dot"></span>
       <span class="dot"></span>
     </div>
     <p class="carousel-hint">Desliza para ver más</p>
+
+    <!-- Mobile CTA -->
+    <div class="carousel-cta-mobile">
+      <a href="#productos" class="carousel-cta-mobile-btn">
+        Ver Catálogo
+      </a>
+    </div>
   `;
 
   return container;

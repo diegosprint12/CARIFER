@@ -25,7 +25,7 @@ if (content) {
   const dotsContainer = document.querySelector('.carousel-dots');
   
   if (track && dotsContainer) {
-    const updateDots = () => {
+    const updateActiveCard = () => {
       const scrollPos = track.scrollLeft;
       const cardWidth = track.querySelector('.carousel-card')?.offsetWidth || 280;
       const activeIndex = Math.round(scrollPos / cardWidth);
@@ -34,9 +34,14 @@ if (content) {
       dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === activeIndex);
       });
+
+      const cards = track.querySelectorAll('.carousel-card');
+      cards.forEach((card, index) => {
+        card.classList.toggle('active', index === activeIndex);
+      });
     };
 
-    track.addEventListener('scroll', updateDots);
-    updateDots();
+    track.addEventListener('scroll', updateActiveCard);
+    updateActiveCard();
   }
 }
