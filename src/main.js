@@ -1,8 +1,10 @@
 import './styles/tokens.css';
 import './styles/main.css';
 import './styles/carousel.css';
+import './styles/whatsapp.css';
 
 import { CategoryCarousel } from './components/CategoryCarousel.js';
+import { WhatsAppButton } from './components/WhatsAppButton.js';
 
 console.log('CARIFER - Inicializando aplicación...');
 
@@ -45,3 +47,5 @@ if (content) {
     updateActiveCard();
   }
 }
+
+document.body.appendChild(WhatsAppButton());
