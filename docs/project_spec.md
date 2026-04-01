@@ -48,9 +48,11 @@
 
 ### Micro-interacciones
 - Botones: Efecto translateY y sombreado suave en hover
-- WhatsApp: Botón flotante persistente con animación de escala
-- Carrusel: Scroll-snap para móvil, prev/next para desktop
-- Imágenes: Zoom suave al hover
+- WhatsApp: Botón flotante persistente con animación de escala (pulse)
+- Carrusel: Scroll-snap para móvil, dots de navegación, active state con zoom
+- Imágenes: Zoom suave al hover, grayscale-to-color en Hero
+- Reveal: Animación de entrada con cubic-bezier(0.19, 1, 0.22, 1) — clase reutilizable
+- Hero image: Intersection Observer para color al scrollear en viewport
 
 ### Grid System
 - Flexbox y CSS Grid para layouts adaptables
@@ -60,8 +62,9 @@
 ## 4. Integraciones
 
 ### WhatsApp
-- Botón flotante con mensaje dinámico por producto
-- Formato: `wa.me/numero?text=Hola! Estoy interesado en [NOMBRE_PRODUCTO]`
+- Botón flotante con animación pulse persistente
+- Formato: `wa.me/5491112345678?text=Hola! Me interesa conocer más sobre los productos CARIFER.`
+- Posición: fixed bottom-right, z-index 999, responsive (60px → 52px)
 
 ### Social
 - Facebook exclusivo en footer con ícono institucional
@@ -75,8 +78,12 @@
 ## 6. Checklist de Entrega
 - [x] Header con logo funcional
 - [x] Navegación responsive (Menú móvil)
-- [ ] Carrusel sin bugs de scroll
+- [x] Hero section con split layout (desktop) y stack (móvil)
+- [x] Carrusel de categorías (3 líneas: Plana, Canoa, Suela Alta)
+- [x] Botón WhatsApp flotante
 - [x] Efectos Hover en botones y redes sociales
+- [x] Animaciones reveal de entrada
+- [ ] Secciones: Nosotros, Productos, Contacto
 - [ ] Optimización de assets
 
 ## 7. Progreso Implementado
@@ -84,4 +91,11 @@
 - [x] Logo SVG con hover currentColor
 - [x] Menú Hamburguesa toggle (mobile)
 - [x] Navbar con Montserrat y letter-spacing
-- [x] Responsive بـ breakpoint 768px
+- [x] Responsive con breakpoint 768px
+- [x] Hero section — split 50/50, min-height 100svh, reveal animations
+- [x] Hero — badge "Colección 2026", H1 con Livvic italic, CTA "Ver Catálogo"
+- [x] Hero — imagen grayscale-to-color + Intersection Observer para móvil
+- [x] Hero — decorative "Hecho a mano con amor" (solo desktop)
+- [x] Carrusel — 3 categorías con scroll-snap, dots, CTA desktop/mobile, active zoom
+- [x] WhatsApp — botón flotante pulse, responsive, aria-label
+- [x] Animaciones — clase .reveal reutilizable con cubic-bezier elegante
