@@ -103,8 +103,8 @@
 .hero-image-decorative {
   display: none;
   position: absolute;
-  bottom: 2.5rem;
-  left: -2.5rem;
+  bottom: 0;
+  left: 0;
   background-color: var(--color-bg);
   padding: var(--space-lg);
   box-shadow: 0 25px 50px rgba(57, 37, 3, 0.2);
@@ -149,5 +149,13 @@
 
   .hero-image {
     min-height: 50svh;
+  }
+
+  .hero-image img {
+    filter: none;
+  }
+
+  .hero-image:hover img {
+    filter: none;
   }
 }
