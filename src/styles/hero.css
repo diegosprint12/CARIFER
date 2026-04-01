@@ -80,7 +80,7 @@
   flex: 1;
   position: relative;
   overflow: hidden;
-  min-height: 100svh;
+  min-height: 95svh;
 }
 
 .hero-image img {
