@@ -64,3 +64,32 @@ if (heroImage) {
   );
   observer.observe(heroImage);
 }
+
+const navLinks = document.querySelectorAll('.nav-list a[href^="#"]');
+const sections = {};
+
+navLinks.forEach(link => {
+  const id = link.getAttribute('href').slice(1);
+  const section = document.getElementById(id);
+  if (section) {
+    sections[id] = { link, section };
+  }
+});
+
+if (Object.keys(sections).length > 0) {
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.id;
+        if (sections[id]) {
+          sections[id].link.classList.toggle('active', entry.isIntersecting);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  Object.values(sections).forEach(({ section }) => {
+    sectionObserver.observe(section);
+  });
+}

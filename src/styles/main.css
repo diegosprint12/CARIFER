@@ -181,6 +181,14 @@ ul, ol {
   width: 100%;
 }
 
+.nav-list a.active {
+  color: var(--color-primary);
+}
+
+.nav-list a.active::after {
+  width: 100%;
+}
+
 /* ===== MAIN CONTENT ===== */
 #content {
   min-height: calc(100vh - 120px);
