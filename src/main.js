@@ -53,3 +53,14 @@ if (content) {
 }
 
 document.body.appendChild(WhatsAppButton());
+
+const heroImage = document.querySelector('.hero-image');
+if (heroImage) {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      heroImage.classList.toggle('in-viewport', entry.isIntersecting);
+    },
+    { threshold: 0.5 }
+  );
+  observer.observe(heroImage);
+}

@@ -5,7 +5,7 @@
 
 .hero-content {
   display: flex;
-  min-height: 100svh;
+  height: 100svh;
 }
 
 /* ===== TEXT COLUMN ===== */
@@ -56,6 +56,7 @@
 
 .hero-cta {
   display: inline-block;
+  align-self: flex-start;
   padding: var(--space-md) var(--space-xl);
   background-color: var(--color-contrast);
   color: var(--color-white);
@@ -95,13 +96,17 @@
   transform: scale(1.1);
 }
 
+.hero-image.in-viewport img {
+  filter: grayscale(0);
+}
+
 .hero-image-decorative {
   display: none;
   position: absolute;
-  bottom: -2.5rem;
+  bottom: 2.5rem;
   left: -2.5rem;
   background-color: var(--color-bg);
-  padding: var(--space-xl);
+  padding: var(--space-lg);
   box-shadow: 0 25px 50px rgba(57, 37, 3, 0.2);
 }
 
@@ -128,6 +133,10 @@
     padding: calc(var(--space-xl) + var(--space-lg)) var(--space-lg) var(--space-lg);
     text-align: center;
     align-items: center;
+  }
+
+  .hero-cta {
+    align-self: center;
   }
 
   .hero-title {

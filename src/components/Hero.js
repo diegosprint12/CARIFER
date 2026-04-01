@@ -1,4 +1,6 @@
 export function Hero() {
+  const decorativeText = 'Hecho a mano con amor';
+
   const section = document.createElement('section');
   section.className = 'hero';
   section.id = 'inicio';
@@ -27,7 +29,7 @@ export function Hero() {
           height="800"
         />
         <div class="hero-image-decorative">
-          <p class="decorative-text">Handmade with Love</p>
+          <p class="decorative-text">${decorativeText}</p>
         </div>
       </div>
     </div>
