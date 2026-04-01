@@ -1,8 +1,11 @@
 import './styles/tokens.css';
 import './styles/main.css';
+import './styles/animations.css';
+import './styles/hero.css';
 import './styles/carousel.css';
 import './styles/whatsapp.css';
 
+import { Hero } from './components/Hero.js';
 import { CategoryCarousel } from './components/CategoryCarousel.js';
 import { WhatsAppButton } from './components/WhatsAppButton.js';
 
@@ -21,6 +24,7 @@ if (navToggle && mainNav) {
 
 const content = document.getElementById('content');
 if (content) {
+  content.appendChild(Hero());
   content.appendChild(CategoryCarousel());
 
   const track = document.querySelector('.carousel-track');
