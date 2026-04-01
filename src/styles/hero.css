@@ -119,6 +119,10 @@
 
 /* ===== RESPONSIVE ===== */
 @media (min-width: 769px) {
+  .hero-content {
+    height: 92svh;
+  }
+
   .hero-image-decorative {
     display: block;
   }
