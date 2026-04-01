@@ -107,7 +107,7 @@ ul, ol {
   position: relative;
   padding: var(--space-xs) var(--space-sm);
   transition: color var(--transition-fast);
-  letter-spacing: 0.03em;
+  letter-spacing: 0.08em;
 }
 
 .nav-list a::after {
