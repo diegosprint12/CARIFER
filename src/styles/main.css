@@ -229,8 +229,9 @@ ul, ol {
   margin-bottom: var(--space-md);
   color: var(--color-contrast);
   filter: grayscale(1);
-  opacity: 0.8;
+  opacity: 0.5;
   transition: all var(--transition-medium);
+  margin-left: -6px;
 }
 
 .footer-logo:hover {

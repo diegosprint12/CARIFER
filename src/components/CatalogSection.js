@@ -14,7 +14,7 @@ export function CatalogSection() {
         <p class="catalog-subtitle">Explora nuestras líneas.</p>
 
         <div class="catalog-filters">
-          <h3 class="filters-label">Filtrar por Línea</h3>
+          <h3 class="filters-label">Filtrar por</h3>
           <ul class="filters-list">
             ${lineas.map((l, i) => `
               <li>
