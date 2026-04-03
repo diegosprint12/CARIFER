@@ -2,13 +2,11 @@ import './styles/tokens.css';
 import './styles/main.css';
 import './styles/animations.css';
 import './styles/hero.css';
-import './styles/carousel.css';
 import './styles/whatsapp.css';
 import './styles/catalog.css';
 
 import { Hero } from './components/Hero.js';
 import { CatalogSection } from './components/CatalogSection.js';
-import { CategoryCarousel } from './components/CategoryCarousel.js';
 import { WhatsAppButton } from './components/WhatsAppButton.js';
 
 console.log('CARIFER - Inicializando aplicación...');
@@ -28,31 +26,6 @@ const content = document.getElementById('content');
 if (content) {
   content.appendChild(Hero());
   content.appendChild(CatalogSection());
-  content.appendChild(CategoryCarousel());
-
-  const track = document.querySelector('.carousel-track');
-  const dotsContainer = document.querySelector('.carousel-dots');
-  
-  if (track && dotsContainer) {
-    const updateActiveCard = () => {
-      const scrollPos = track.scrollLeft;
-      const cardWidth = track.querySelector('.carousel-card')?.offsetWidth || 280;
-      const activeIndex = Math.round(scrollPos / cardWidth);
-      
-      const dots = dotsContainer.querySelectorAll('.dot');
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === activeIndex);
-      });
-
-      const cards = track.querySelectorAll('.carousel-card');
-      cards.forEach((card, index) => {
-        card.classList.toggle('active', index === activeIndex);
-      });
-    };
-
-    track.addEventListener('scroll', updateActiveCard);
-    updateActiveCard();
-  }
 }
 
 document.body.appendChild(WhatsAppButton());

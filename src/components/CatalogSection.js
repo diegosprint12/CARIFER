@@ -1,63 +1,7 @@
+import { products, lineas, lineaLabels } from '../data/products.js';
+
 export function CatalogSection() {
-  const phoneNumber = '5491112345678';
-
-  const products = [
-    {
-      ref: 'PL01',
-      linea: 'plana',
-      color: 'Miel',
-      desc: 'Cuero legítimo de alta suavidad.',
-      img: '/images/catalogo/pl01.webp'
-    },
-    {
-      ref: 'PL02',
-      linea: 'plana',
-      color: 'Natural',
-      desc: 'Diseño minimalista de amarre.',
-      img: '/images/catalogo/pl02.webp'
-    },
-    {
-      ref: 'CN01',
-      linea: 'canoa',
-      color: 'Café',
-      desc: 'Ergonomía clásica para el día a día.',
-      img: '/images/catalogo/cn01.webp'
-    },
-    {
-      ref: 'CN02',
-      linea: 'canoa',
-      color: 'Chocolate',
-      desc: 'Cojín interno para máximo confort.',
-      img: '/images/catalogo/cn02.webp'
-    },
-    {
-      ref: 'SA01',
-      linea: 'suela-alta',
-      color: 'Negro',
-      desc: 'Altura con estabilidad garantizada.',
-      img: '/images/catalogo/sa01.webp'
-    },
-    {
-      ref: 'SA02',
-      linea: 'suela-alta',
-      color: 'Camel',
-      desc: 'Plataforma ligera en EVA.',
-      img: '/images/catalogo/sa02.webp'
-    }
-  ];
-
-  const lineas = [
-    { id: 'todos', label: 'Todos los Modelos' },
-    { id: 'plana', label: 'Línea Plana (PL)' },
-    { id: 'canoa', label: 'Línea Canoa (CN)' },
-    { id: 'suela-alta', label: 'Suela Alta (SA)' }
-  ];
-
-  const lineaLabels = {
-    'plana': 'Línea Plana',
-    'canoa': 'Línea Canoa',
-    'suela-alta': 'Suela Alta'
-  };
+  const phoneNumber = '573185239435';
 
   const section = document.createElement('section');
   section.className = 'catalog';
@@ -67,7 +11,7 @@ export function CatalogSection() {
     <div class="catalog-layout">
       <aside class="catalog-sidebar">
         <h2 class="catalog-title">Catálogo</h2>
-        <p class="catalog-subtitle">Explora nuestras líneas artesanales.</p>
+        <p class="catalog-subtitle">Explora nuestras líneas.</p>
 
         <div class="catalog-filters">
           <h3 class="filters-label">Filtrar por Línea</h3>
@@ -83,9 +27,9 @@ export function CatalogSection() {
         </div>
 
         <div class="catalog-info-box">
-          <h4 class="info-title">¿Cómo comprar?</h4>
+          <h4 class="info-title">¿Cómo pedir?</h4>
           <p class="info-text">
-            Selecciona el modelo que te guste y envíanos la referencia por WhatsApp. Acordaremos tu talla y detalles de envío de forma personalizada.
+            Selecciona el modelo que te guste y dale al botón de consultar para hablar con nosotros por WhatsApp. Acordaremos tu talla y detalles de envío de forma personalizada.
           </p>
           <div class="info-status">
             <span class="status-dot"></span>
@@ -97,7 +41,15 @@ export function CatalogSection() {
       <div class="catalog-main">
         <div class="catalog-header">
           <p class="catalog-count"><span class="count-number">${products.length}</span> Referencias en Catálogo</p>
-          <span class="catalog-origin">Piedecuesta, Santander</span>
+          <span class="catalog-origin">Girón, Santander</span>
+        </div>
+
+        <div class="catalog-filters-mobile">
+          ${lineas.map((l, i) => `
+            <button class="filter-pill ${i === 0 ? 'active' : ''}" data-filter="${l.id}">
+              ${l.label}
+            </button>
+          `).join('')}
         </div>
 
         <div class="catalog-grid" id="catalog-grid">
@@ -127,14 +79,6 @@ export function CatalogSection() {
           `).join('')}
         </div>
       </div>
-    </div>
-
-    <div class="catalog-filters-mobile">
-      ${lineas.map((l, i) => `
-        <button class="filter-pill ${i === 0 ? 'active' : ''}" data-filter="${l.id}">
-          ${l.label}
-        </button>
-      `).join('')}
     </div>
   `;
 
