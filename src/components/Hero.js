@@ -16,7 +16,7 @@ export function Hero() {
         <p class="hero-subtitle reveal" style="animation-delay: 0.4s">
           Tradición en cada costura
         </p>
-        <a href="#productos" class="hero-cta reveal" style="animation-delay: 0.6s">
+        <a href="#catalogo" class="hero-cta reveal" style="animation-delay: 0.6s">
           Ver Catálogo
         </a>
       </div>

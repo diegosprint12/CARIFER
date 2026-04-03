@@ -41,7 +41,7 @@ export function CategoryCarousel() {
     
     <!-- Desktop CTA -->
     <div class="carousel-cta">
-      <a href="#productos" class="carousel-cta-btn">
+      <a href="#catalogo" class="carousel-cta-btn">
         Explorar Catálogo
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
           <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -58,7 +58,7 @@ export function CategoryCarousel() {
 
     <!-- Mobile CTA -->
     <div class="carousel-cta-mobile">
-      <a href="#productos" class="carousel-cta-mobile-btn">
+      <a href="#catalogo" class="carousel-cta-mobile-btn">
         Ver Catálogo
       </a>
     </div>
