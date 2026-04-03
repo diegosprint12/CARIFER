@@ -4,8 +4,10 @@ import './styles/animations.css';
 import './styles/hero.css';
 import './styles/carousel.css';
 import './styles/whatsapp.css';
+import './styles/catalog.css';
 
 import { Hero } from './components/Hero.js';
+import { CatalogSection } from './components/CatalogSection.js';
 import { CategoryCarousel } from './components/CategoryCarousel.js';
 import { WhatsAppButton } from './components/WhatsAppButton.js';
 
@@ -25,6 +27,7 @@ if (navToggle && mainNav) {
 const content = document.getElementById('content');
 if (content) {
   content.appendChild(Hero());
+  content.appendChild(CatalogSection());
   content.appendChild(CategoryCarousel());
 
   const track = document.querySelector('.carousel-track');
@@ -93,3 +96,46 @@ if (Object.keys(sections).length > 0) {
     sectionObserver.observe(section);
   });
 }
+
+const catalogGrid = document.getElementById('catalog-grid');
+const countNumber = document.querySelector('.count-number');
+
+function applyFilter(filter) {
+  if (!catalogGrid) return;
+
+  const cards = catalogGrid.querySelectorAll('.product-card');
+  let visibleCount = 0;
+
+  cards.forEach(card => {
+    const linea = card.getAttribute('data-linea');
+    const isVisible = filter === 'todos' || linea === filter;
+
+    card.classList.toggle('hidden', !isVisible);
+    if (isVisible) visibleCount++;
+  });
+
+  if (countNumber) {
+    countNumber.textContent = visibleCount;
+  }
+
+  document.querySelectorAll('.filter-link').forEach(link => {
+    link.classList.toggle('active', link.getAttribute('data-filter') === filter);
+  });
+
+  document.querySelectorAll('.filter-pill').forEach(pill => {
+    pill.classList.toggle('active', pill.getAttribute('data-filter') === filter);
+  });
+}
+
+document.querySelectorAll('.filter-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    applyFilter(link.getAttribute('data-filter'));
+  });
+});
+
+document.querySelectorAll('.filter-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    applyFilter(pill.getAttribute('data-filter'));
+  });
+});
