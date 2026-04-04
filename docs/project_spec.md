@@ -49,21 +49,22 @@
 ### Micro-interacciones
 - Botones: Efecto translateY y sombreado suave en hover
 - WhatsApp: Botón flotante persistente con animación de escala (pulse)
-- Carrusel: Scroll-snap para móvil, dots de navegación, active state con zoom
 - Imágenes: Zoom suave al hover, grayscale-to-color en Hero
 - Reveal: Animación de entrada con cubic-bezier(0.19, 1, 0.22, 1) — clase reutilizable
 - Hero image: Intersection Observer para color al scrollear en viewport
+- Nav links: Active state con underline via Intersection Observer
+- Catálogo: Filtros por línea con toggle de visibilidad
 
 ### Grid System
 - Flexbox y CSS Grid para layouts adaptables
-- Móvil: 1 columna, carrusel 85% ancho
-- Desktop: 2 columnas (Nosotros), 3-4 columnas (Productos)
+- Móvil: 1 columna
+- Desktop: 3 columnas (Catálogo), 2 columnas (Nosotros)
 
 ## 4. Integraciones
 
 ### WhatsApp
 - Botón flotante con animación pulse persistente
-- Formato: `wa.me/5491112345678?text=Hola! Me interesa conocer más sobre los productos CARIFER.`
+- Formato: `wa.me/573185239435?text=Hola! Me interesa conocer más sobre los productos CARIFER.`
 - Posición: fixed bottom-right, z-index 999, responsive (60px → 52px)
 
 ### Social
@@ -79,11 +80,12 @@
 - [x] Header con logo funcional
 - [x] Navegación responsive (Menú móvil)
 - [x] Hero section con split layout (desktop) y stack (móvil)
-- [x] Carrusel de categorías (3 líneas: Plana, Canoa, Suela Alta)
+- [x] Catálogo con filtros por línea (Plana, Canoa, Suela Alta)
 - [x] Botón WhatsApp flotante
 - [x] Efectos Hover en botones y redes sociales
 - [x] Animaciones reveal de entrada
-- [ ] Secciones: Nosotros, Productos, Contacto
+- [x] Footer artesanal con 3 columnas y sello "Hecho a mano 100%"
+- [ ] Secciones: Nosotros, Contacto
 - [ ] Optimización de assets
 
 ## 7. Progreso Implementado
@@ -95,7 +97,14 @@
 - [x] Hero section — split 50/50, min-height 100svh, reveal animations
 - [x] Hero — badge "Colección 2026", H1 con Livvic italic, CTA "Ver Catálogo"
 - [x] Hero — imagen grayscale-to-color + Intersection Observer para móvil
-- [x] Hero — decorative "Hecho a mano con amor" (solo desktop)
-- [x] Carrusel — 3 categorías con scroll-snap, dots, CTA desktop/mobile, active zoom
+- [x] Hero — decorative "#tucaminotuestilo" (solo desktop)
+- [x] Catálogo — 6 productos (2 por línea), sidebar sticky desktop, pills mobile
+- [x] Catálogo — filtros funcionales por línea con contador dinámico
+- [x] Catálogo — datos separados en src/data/products.js (escalable)
 - [x] WhatsApp — botón flotante pulse, responsive, aria-label
+- [x] Footer — 3 columnas (marca, navegación, redes), sello artesanal, Est. 2019
+- [x] Nav links — active state con Intersection Observer
 - [x] Animaciones — clase .reveal reutilizable con cubic-bezier elegante
+
+## 8. Secciones Eliminadas
+- Carrusel de categorías — eliminado al implementar Catálogo (redundante)
