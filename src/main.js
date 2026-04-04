@@ -4,9 +4,13 @@ import './styles/animations.css';
 import './styles/hero.css';
 import './styles/whatsapp.css';
 import './styles/catalog.css';
+import './styles/nosotros.css';
+import './styles/contacto.css';
 
 import { Hero } from './components/Hero.js';
 import { CatalogSection } from './components/CatalogSection.js';
+import { AboutSection } from './components/AboutSection.js';
+import { ContactSection } from './components/ContactSection.js';
 import { WhatsAppButton } from './components/WhatsAppButton.js';
 
 console.log('CARIFER - Inicializando aplicación...');
@@ -26,6 +30,8 @@ const content = document.getElementById('content');
 if (content) {
   content.appendChild(Hero());
   content.appendChild(CatalogSection());
+  content.appendChild(AboutSection());
+  content.appendChild(ContactSection());
 }
 
 document.body.appendChild(WhatsAppButton());
@@ -112,3 +118,24 @@ document.querySelectorAll('.filter-pill').forEach(pill => {
     applyFilter(pill.getAttribute('data-filter'));
   });
 });
+
+const gallerySlides = document.querySelectorAll('.gallery-slide');
+if (gallerySlides.length > 1) {
+  let currentSlide = 0;
+  setInterval(() => {
+    gallerySlides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % gallerySlides.length;
+    gallerySlides[currentSlide].classList.add('active');
+  }, 5000);
+}
+
+const galleryContainer = document.querySelector('.gallery-slides');
+if (galleryContainer) {
+  const galleryObserver = new IntersectionObserver(
+    ([entry]) => {
+      galleryContainer.classList.toggle('in-viewport', entry.isIntersecting);
+    },
+    { threshold: 0.3 }
+  );
+  galleryObserver.observe(galleryContainer);
+}
