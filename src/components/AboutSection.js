@@ -25,8 +25,8 @@ export function AboutSection() {
       <div class="about-header reveal">
         <span class="about-label">La Esencia</span>
         <h2 class="about-title">
-          Manos que cuentan<br>
-          <span class="about-title-accent">historias en cuero.</span>
+          Coser el tiempo<br>
+          <span class="about-title-accent">un par a la vez.</span>
         </h2>
         <p class="about-quote">
           "No solo fabricamos calzado; preservamos un oficio que define nuestra identidad."

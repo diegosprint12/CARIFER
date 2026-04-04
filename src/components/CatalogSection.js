@@ -27,9 +27,9 @@ export function CatalogSection() {
         </div>
 
         <div class="catalog-info-box">
-          <h4 class="info-title">¿Cómo pedir?</h4>
+          <h4 class="info-title">Cobertura de Envío</h4>
           <p class="info-text">
-            Selecciona el modelo que te guste y dale al botón de consultar para hablar con nosotros por WhatsApp. Acordaremos tu talla y detalles de envío de forma personalizada.
+            Cubrimos el área Metropolitana de Bucaramanga. Consúltanos para más información.
           </p>
           <div class="info-status">
             <span class="status-dot"></span>
