@@ -113,3 +113,32 @@ if (galleryContainer) {
   );
   galleryObserver.observe(galleryContainer);
 }
+
+const catalogHeader = document.querySelector('.catalog-header');
+if (catalogHeader) {
+  const backToTopBtn = document.createElement('button');
+  backToTopBtn.className = 'catalog-back-to-top';
+  backToTopBtn.setAttribute('aria-label', 'Volver arriba');
+  backToTopBtn.innerHTML = `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+      <path d="M18 15l-6-6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  `;
+
+  let scrollLocked = false;
+
+  backToTopBtn.addEventListener('click', () => {
+    scrollLocked = true;
+    backToTopBtn.classList.remove('visible');
+    document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(() => { scrollLocked = false; }, 1000);
+  });
+
+  document.body.appendChild(backToTopBtn);
+
+  window.addEventListener('scroll', () => {
+    if (scrollLocked) return;
+    const rect = catalogHeader.getBoundingClientRect();
+    backToTopBtn.classList.toggle('visible', rect.top < 0);
+  }, { passive: true });
+}
