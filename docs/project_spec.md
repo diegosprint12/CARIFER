@@ -53,7 +53,7 @@
 - Reveal: Animación de entrada con cubic-bezier(0.19, 1, 0.22, 1) — clase reutilizable
 - Hero image: Intersection Observer para color al scrollear en viewport
 - Nav links: Active state con underline via Intersection Observer
-- Catálogo: Filtros por línea con toggle de visibilidad
+- Catálogo: Filtros por línea con re-render dinámico (Opción C)
 
 ### Grid System
 - Flexbox y CSS Grid para layouts adaptables
