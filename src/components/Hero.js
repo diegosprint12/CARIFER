@@ -1,5 +1,6 @@
 export function Hero() {
   const decorativeText = '#tucaminotuestilo';
+  const base = import.meta.env.BASE_URL;
 
   const section = document.createElement('section');
   section.className = 'hero';
@@ -22,7 +23,7 @@ export function Hero() {
       </div>
       <div class="hero-image reveal" style="animation-delay: 0.4s">
         <img
-          src="/images/carifer-hero-1.webp"
+          src="${base}images/carifer-hero-1.webp"
           alt="Sandalia artesanal CARIFER"
           loading="eager"
           width="600"
