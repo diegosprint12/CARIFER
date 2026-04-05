@@ -8,7 +8,7 @@ import './styles/nosotros.css';
 import './styles/contacto.css';
 
 import { Hero } from './components/Hero.js';
-import { CatalogSection } from './components/CatalogSection.js';
+import { CatalogSection, renderCatalogGrid } from './components/CatalogSection.js';
 import { AboutSection } from './components/AboutSection.js';
 import { ContactSection } from './components/ContactSection.js';
 import { WhatsAppButton } from './components/WhatsAppButton.js';
@@ -76,46 +76,20 @@ if (Object.keys(sections).length > 0) {
   });
 }
 
-const catalogGrid = document.getElementById('catalog-grid');
-const countNumber = document.querySelector('.count-number');
-
-function applyFilter(filter) {
-  if (!catalogGrid) return;
-
-  const cards = catalogGrid.querySelectorAll('.product-card');
-  let visibleCount = 0;
-
-  cards.forEach(card => {
-    const linea = card.getAttribute('data-linea');
-    const isVisible = filter === 'todos' || linea === filter;
-
-    card.classList.toggle('hidden', !isVisible);
-    if (isVisible) visibleCount++;
-  });
-
-  if (countNumber) {
-    countNumber.textContent = visibleCount;
-  }
-
-  document.querySelectorAll('.filter-link').forEach(link => {
-    link.classList.toggle('active', link.getAttribute('data-filter') === filter);
-  });
-
-  document.querySelectorAll('.filter-pill').forEach(pill => {
-    pill.classList.toggle('active', pill.getAttribute('data-filter') === filter);
-  });
-}
+renderCatalogGrid();
 
 document.querySelectorAll('.filter-link').forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
-    applyFilter(link.getAttribute('data-filter'));
+    renderCatalogGrid(link.getAttribute('data-filter'));
+    document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
 document.querySelectorAll('.filter-pill').forEach(pill => {
   pill.addEventListener('click', () => {
-    applyFilter(pill.getAttribute('data-filter'));
+    renderCatalogGrid(pill.getAttribute('data-filter'));
+    document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 

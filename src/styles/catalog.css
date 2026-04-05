@@ -206,10 +206,6 @@
   transform: translateY(-8px);
 }
 
-.product-card.hidden {
-  display: none;
-}
-
 .product-image-container {
   position: relative;
   aspect-ratio: 3 / 4;
