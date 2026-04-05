@@ -9,6 +9,10 @@ permissions:
   pages: write
   id-token: write
 
+# Aquí añadimos la variable que pide GitHub para usar Node 24 ya mismo
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   deploy:
     environment:
@@ -21,18 +25,17 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24 # Actualizado de 20 a 24
           cache: 'npm'
       - name: Install dependencies
         run: npm install
       - name: Build
         run: npm run build
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5 # Subimos a v5 si está disponible
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Aquí le decimos que suba la carpeta dist que crea Vite
           path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
