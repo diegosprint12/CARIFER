@@ -356,7 +356,7 @@
 
 @media (max-width: 768px) {
   .catalog {
-    padding-top: calc(var(--space-xl) + var(--space-lg));
+    padding-top: calc(var(--space-xl) * 2);
     padding-bottom: var(--space-lg);
   }
 

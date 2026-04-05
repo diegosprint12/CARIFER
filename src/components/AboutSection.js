@@ -1,19 +1,10 @@
 export function AboutSection() {
-  const phoneNumber = '573185239435';
+  const base = import.meta.env.BASE_URL;
 
   const galleryImages = [
-    {
-      src: '/images/nosotros/taller-1.webp',
-      alt: 'Artesano trabajando el cuero en el taller CARIFER'
-    },
-    {
-      src: '/images/nosotros/taller-2.webp',
-      alt: 'Detalle de costura manual en sandalia CARIFER'
-    },
-    {
-      src: '/images/nosotros/taller-3.webp',
-      alt: 'Cuero seleccionado para la producción artesanal'
-    }
+    { src: `${base}images/nosotros/taller-1.webp`, alt: 'Artesano trabajando el cuero en el taller CARIFER' },
+    { src: `${base}images/nosotros/taller-2.webp`, alt: 'Detalle de costura manual en sandalia CARIFER' },
+    { src: `${base}images/nosotros/taller-3.webp`, alt: 'Cuero seleccionado para la producción artesanal' }
   ];
 
   const section = document.createElement('section');
