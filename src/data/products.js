@@ -83,7 +83,7 @@ export const products = [
   { ref: 'CN44', linea: 'canoa', color: '', desc: '', img: `${base}images/catalogo/CN44.webp` },
   { ref: 'CN45', linea: 'canoa', color: '', desc: '', img: `${base}images/catalogo/CN45.webp` },
   { ref: 'CN46', linea: 'canoa', color: '', desc: '', img: `${base}images/catalogo/CN46.webp` },
-  { ref: 'SA01', linea: 'suela-alta', color: '', desc: '', img: `${base}images/catalogo/sa01.webp` },
+  { ref: 'SA01', linea: 'suela-alta', color: '', desc: '', img: `${base}images/catalogo/SA01.webp` },
   { ref: 'SA02', linea: 'suela-alta', color: '', desc: '', img: `${base}images/catalogo/SA02.webp` },
   { ref: 'SA03', linea: 'suela-alta', color: '', desc: '', img: `${base}images/catalogo/SA03.webp` },
   { ref: 'SA04', linea: 'suela-alta', color: '', desc: '', img: `${base}images/catalogo/SA04.webp` }
