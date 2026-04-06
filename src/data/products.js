@@ -2,7 +2,7 @@ const base = import.meta.env.BASE_URL;
 
 export const products = [
   { ref: 'PL01', linea: 'plana', color: '', desc: '', img: `${base}images/catalogo/PL01.webp` },
-  { ref: 'PL02', linea: 'plana', color: '', desc: '', img: `${base}images/catalogo/pl02.webp` },
+  { ref: 'PL02', linea: 'plana', color: '', desc: '', img: `${base}images/catalogo/PL02.webp` },
   { ref: 'PL03', linea: 'plana', color: '', desc: '', img: `${base}images/catalogo/PL03.webp` },
   { ref: 'PL04', linea: 'plana', color: '', desc: '', img: `${base}images/catalogo/PL04.webp` },
   { ref: 'PL05', linea: 'plana', color: '', desc: '', img: `${base}images/catalogo/PL05.webp` },
@@ -81,6 +81,8 @@ export const products = [
   { ref: 'CN42', linea: 'canoa', color: '', desc: '', img: `${base}images/catalogo/CN42.webp` },
   { ref: 'CN43', linea: 'canoa', color: '', desc: '', img: `${base}images/catalogo/CN43.webp` },
   { ref: 'CN44', linea: 'canoa', color: '', desc: '', img: `${base}images/catalogo/CN44.webp` },
+  { ref: 'CN45', linea: 'canoa', color: '', desc: '', img: `${base}images/catalogo/CN45.webp` },
+  { ref: 'CN46', linea: 'canoa', color: '', desc: '', img: `${base}images/catalogo/CN46.webp` },
   { ref: 'SA01', linea: 'suela-alta', color: '', desc: '', img: `${base}images/catalogo/sa01.webp` },
   { ref: 'SA02', linea: 'suela-alta', color: '', desc: '', img: `${base}images/catalogo/SA02.webp` },
   { ref: 'SA03', linea: 'suela-alta', color: '', desc: '', img: `${base}images/catalogo/SA03.webp` },

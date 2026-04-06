@@ -2,9 +2,12 @@ export function AboutSection() {
   const base = import.meta.env.BASE_URL;
 
   const galleryImages = [
+    { src: `${base}images/nosotros/taller-0.webp`, alt: 'Vista general del taller CARIFER' },
     { src: `${base}images/nosotros/taller-1.webp`, alt: 'Artesano trabajando el cuero en el taller CARIFER' },
     { src: `${base}images/nosotros/taller-2.webp`, alt: 'Detalle de costura manual en sandalia CARIFER' },
-    { src: `${base}images/nosotros/taller-3.webp`, alt: 'Cuero seleccionado para la producción artesanal' }
+    { src: `${base}images/nosotros/taller-3.webp`, alt: 'Cuero seleccionado para la producción artesanal' },
+    { src: `${base}images/nosotros/taller-4.webp`, alt: 'Proceso de acabado artesanal CARIFER' },
+    { src: `${base}images/nosotros/taller-5.webp`, alt: 'Detalle final de calzado artesanal CARIFER' }
   ];
 
   const section = document.createElement('section');
