@@ -13,10 +13,12 @@ dist-ssr
 *.local
 # Folders
 /docs/dev_logs
+/.atl
 # Independent Files
 AGENTS.md
 .gga
 project_spec.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
