@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 # Folders
-/dev_logs
+/docs/dev_logs
 # Independent Files
 AGENTS.md
 .gga
