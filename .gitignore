@@ -11,7 +11,12 @@ node_modules
 dist
 dist-ssr
 *.local
-
+# Folders
+/dev_logs
+# Independent Files
+AGENTS.md
+.gga
+project_spec.md
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
