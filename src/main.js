@@ -89,7 +89,6 @@ document.querySelectorAll('.filter-link').forEach(link => {
 document.querySelectorAll('.filter-pill').forEach(pill => {
   pill.addEventListener('click', () => {
     renderCatalogGrid(pill.getAttribute('data-filter'));
-    document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 

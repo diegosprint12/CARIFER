@@ -107,17 +107,49 @@ export function CatalogSection() {
         </div>
 
         <div class="catalog-filters-mobile">
+          <h4 class="filter-mobile-label">Filtrar por</h4>
+          <div class="pills-scroll">
           ${lineas.map((l, i) => `
             <button class="filter-pill ${i === 0 ? 'active' : ''}" data-filter="${l.id}">
               ${l.label}
             </button>
           `).join('')}
+          </div>
+        </div>
+
+        <div class="catalog-info-collapse">
+          <button class="info-collapse-trigger" aria-expanded="false">
+            <svg class="info-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span class="info-collapse-title">¿Dónde entregamos?</span>
+            <span class="info-collapse-preview">Área Metropolitana de Bucaramanga</span>
+            <span class="info-collapse-arrow">▸</span>
+          </button>
+          <div class="info-collapse-content">
+            <p class="info-collapse-text">Cubrimos el Área Metropolitana de Bucaramanga. Consúltanos para más información.</p>
+            <div class="info-collapse-status">
+              <span class="status-dot"></span>
+              <span class="status-text">Taller disponible</span>
+            </div>
+          </div>
         </div>
 
         <div class="catalog-grid" id="catalog-grid"></div>
       </div>
     </div>
   `;
+
+  // Collapsible toggle via event delegation
+  section.addEventListener('click', (e) => {
+    const trigger = e.target.closest('.info-collapse-trigger');
+    if (!trigger) return;
+    const expanded = trigger.getAttribute('aria-expanded') === 'true';
+    trigger.setAttribute('aria-expanded', !expanded);
+    trigger.nextElementSibling.classList.toggle('open');
+    trigger.querySelector('.info-collapse-arrow').classList.toggle('open');
+  });
 
   return section;
 }
