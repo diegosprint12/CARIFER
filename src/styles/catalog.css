@@ -556,3 +556,25 @@
     transform: translateY(-2px);
   }
 }
+
+/* ===== LOAD MORE BUTTON ===== */
+.load-more-btn {
+  display: block;
+  margin: var(--space-xl) auto 0;
+  padding: 12px 32px;
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-contrast);
+  background: transparent;
+  border: 2px solid var(--color-contrast);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.load-more-btn:hover {
+  background-color: var(--color-contrast);
+  color: var(--color-white);
+}

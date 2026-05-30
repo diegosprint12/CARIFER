@@ -2,6 +2,11 @@ import { products, lineas, lineaLabels } from '../data/products.js';
 
 const phoneNumber = '573185239435';
 
+const PAGE_SIZE = 12;
+let visibleCount = PAGE_SIZE;
+let shuffleCache = null;
+let currentFilter = 'todos';
+
 function createProductCard(p, i) {
   const card = document.createElement('article');
   card.className = 'product-card reveal';
@@ -37,31 +42,78 @@ function createProductCard(p, i) {
   return card;
 }
 
+function sortByRefDesc(products) {
+  return [...products].sort((a, b) => {
+    const numA = parseInt(a.ref.slice(2), 10);
+    const numB = parseInt(b.ref.slice(2), 10);
+    return numB - numA;
+  });
+}
+
+function fisherYatesShuffle(arr) {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+function getOrderedProducts(filter) {
+  if (filter === 'todos') {
+    if (!shuffleCache) {
+      shuffleCache = fisherYatesShuffle(products);
+    }
+    return shuffleCache;
+  }
+  const filtered = products.filter(p => p.linea === filter);
+  return sortByRefDesc(filtered);
+}
+
 export function renderCatalogGrid(filter = 'todos') {
+  currentFilter = filter;
+  visibleCount = PAGE_SIZE;
+  if (filter === 'todos') shuffleCache = null;
+  renderVisibleProducts();
+}
+
+function renderVisibleProducts() {
   const grid = document.getElementById('catalog-grid');
   if (!grid) return;
 
-  const filtered = filter === 'todos'
-    ? products
-    : products.filter(p => p.linea === filter);
+  const ordered = getOrderedProducts(currentFilter);
+  const slice = ordered.slice(0, visibleCount);
 
   grid.innerHTML = '';
-  filtered.forEach((p, i) => {
+  slice.forEach((p, i) => {
     grid.appendChild(createProductCard(p, i));
   });
 
   const countNumber = document.querySelector('.count-number');
-  if (countNumber) {
-    countNumber.textContent = filtered.length;
-  }
+  if (countNumber) countNumber.textContent = ordered.length;
 
-  document.querySelectorAll('.filter-link').forEach(link => {
-    link.classList.toggle('active', link.getAttribute('data-filter') === filter);
+  document.querySelectorAll('.filter-link, .filter-pill').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-filter') === currentFilter);
   });
 
-  document.querySelectorAll('.filter-pill').forEach(pill => {
-    pill.classList.toggle('active', pill.getAttribute('data-filter') === filter);
+  updateLoadMoreButton(grid, ordered.length);
+}
+
+function updateLoadMoreButton(grid, total) {
+  const existing = document.querySelector('.load-more-btn');
+  if (existing) existing.remove();
+
+  if (visibleCount >= total) return;
+
+  const btn = document.createElement('button');
+  btn.className = 'load-more-btn';
+  btn.textContent = 'Cargar más';
+  btn.addEventListener('click', () => {
+    visibleCount += PAGE_SIZE;
+    renderVisibleProducts();
   });
+
+  grid.parentNode.appendChild(btn);
 }
 
 export function CatalogSection() {
